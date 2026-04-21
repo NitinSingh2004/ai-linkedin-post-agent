@@ -97,26 +97,26 @@ workflow.add_edge("poster", END)
 memory = MemorySaver()
 app = workflow.compile(checkpointer=memory, interrupt_before=["poster"])
 
-# --- EXECUTION ---
-if __name__ == "__main__":
-    thread_config = {"configurable": {"thread_id": "post_v1"}}
+# # --- EXECUTION ---
+# if __name__ == "__main__":
+#     thread_config = {"configurable": {"thread_id": "post_v1"}}
     
-    # Start the flow
-    user_query = "The importance of Human-in-the-loop in AI agentic workflows."
-    app.invoke({"query": user_query}, thread_config)
+#     # Start the flow
+#     user_query = "The importance of Human-in-the-loop in AI agentic workflows."
+#     app.invoke({"query": user_query}, thread_config)
 
-    # Review step
-    current_state = app.get_state(thread_config)
-    print(f"\n--- DRAFT POST ---\n{current_state.values['content']}\n------------------")
+#     # Review step
+#     current_state = app.get_state(thread_config)
+#     print(f"\n--- DRAFT POST ---\n{current_state.values['content']}\n------------------")
     
-    choice = input("Approve this post for LinkedIn? (y/n): ").lower()
+#     choice = input("Approve this post for LinkedIn? (y/n): ").lower()
     
-    if choice == 'y':
-        # Update state and resume
-        app.update_state(thread_config, {"approval_status": "approved"}, as_node="writer")
-        app.invoke(None, thread_config)
-    else:
-        print("Post rejected.")
+#     if choice == 'y':
+#         # Update state and resume
+#         app.update_state(thread_config, {"approval_status": "approved"}, as_node="writer")
+#         app.invoke(None, thread_config)
+#     else:
+#         print("Post rejected.")
 
 
 
