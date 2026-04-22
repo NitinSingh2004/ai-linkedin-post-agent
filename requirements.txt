@@ -1,12 +1,8 @@
-# Core AI and Workflow
-langgraph>= 1.1.3
-langchain-openai>= 1.1.12
-langchain-core>=1.2.13
-
-# API and Utilities
-requests>=2.31.0
-python-dotenv>= 1.0.0
-
-# Optional: If using FastAPI for a custom backend
-# fastapi>=0.100.0
-# uvicorn>=0.23.0
+streamlit
+langgraph
+langchain
+langchain-core
+langchain-groq
+python-dotenv
+requests
+typing-extensions
