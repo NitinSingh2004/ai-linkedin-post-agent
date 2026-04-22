@@ -5,7 +5,7 @@ langchain-core>=1.2.13
 
 # API and Utilities
 requests>=2.31.0
-python-dotenv>= 2.32.5
+python-dotenv>= 1.0.0
 python>= 3.10.9
 
 # Optional: If using FastAPI for a custom backend
